@@ -1,0 +1,25 @@
+html {
+    --mdc-typography-font-family: 'Red Rose', cursive;
+  }
+#bingo-panel{
+    text-align: center;
+}
+.title-name{
+    text-align: center;
+}
+.host-button {
+    text-align: center;
+}
+.info{
+    text-align: center;
+}
+.joinid{
+    text-align: center;
+ 
+}
+.home-name{
+    text-align: center;
+}
+.join-button{
+    text-align: center;
+}
