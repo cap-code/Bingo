@@ -4,6 +4,28 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+    <meta name="description" content="bingo the classic game that we used to play or still palying is  now possible to  paly online .Now paly with your friends anywhere (mainly in between long boring lectures) . paly this amazing online -efied version of the game .It is possible through webRTC to connect the players so no servers is needed ! ">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Bingo">
+    <meta itemprop="description" content="bingo the classic game that we used to play or still palying is  now possible to  paly online .Now paly with your friends anywhere (mainly in between long boring lectures) . paly this amazing online -efied version of the game .It is possible through webRTC to connect the players so no servers is needed !">
+    <!--<meta itemprop="image" content="https://vett.space/static/favicon.png">-->
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://b1ng0.ga">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bingo classic game is  Online Multiplayer Game">
+    <meta property="og:description" content="bingo classic game ,play with your friends NOW !">
+    <!--<meta property="og:image" content="https://vett.space/static/favicon.png">-->
+    
+    <!-- Twitter Meta Tags -->
+    <!--<meta name="twitter:card" content="summary_large_image">-->
+    <meta name="twitter:title" content="bingo classic game is  Online Multiplayer Game">
+    <meta name="twitter:description" content="bingo the classic game that we used to play or still palying is  now possible to  paly online .Now play with your friends anywhere (mainly in between long boring lectures) . paly this amazing online -efied version of the game .It is possible through webRTC to connect the players so no servers is needed !">
+	<!--<meta name="twitter:image" content="https://vett.space/static/favicon.png">-->
+	
+
+
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -16,10 +38,7 @@
 
 	<script src="libraries/p5.js"></script>
 	<script src="libraries/p5.dom.js"></script>
-	<script src="libraries/p5.sound.js"></script>
-	<script src="sketch.js"></script>
-	<script src="main.js"></script>
-    
+	<!-- <script src="libraries/p5.sound.js"></script> -->
 </head>
 <body>
 
@@ -27,10 +46,10 @@
 		<h1 class="mdc-typography--headline3">Bingo- classic game</h1>
 	</div>
 	<br>
-
+<div class="home-page">
     <div class="home-name">
 		<label class="mdc-text-field mdc-text-field--outlined">
-			<input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
+			<input type="text" class="mdc-text-field__input" aria-labelledby="my-label-id" id="name-id">
 			<span class="mdc-notched-outline">
 				<span class="mdc-notched-outline__leading"></span>
 				<span class="mdc-notched-outline__notch">
@@ -47,7 +66,7 @@
    <br>
    <br>
 	<div class ="host-button">
-        <button class="mdc-button mdc-button--raised">
+        <button class="mdc-button mdc-button--raised" id="host-button" onClick="host_setup_page()">
 			<div class="mdc-button__ripple"></div>
 			<span class="mdc-button__label">Host game</span>
 		  </button>
@@ -73,23 +92,53 @@
 	
     <p></p>
 	<div class="join-button">
-		<button class="mdc-button mdc-button--raised">
+		<button class="mdc-button mdc-button--raised" onClick="playArea()">
 			<div class="mdc-button__ripple"></div>
 			<span class="mdc-button__label">join</span>
 		  </button>
 	</div>
 
-
+</div>
 	<div><p></p><br></div>
 
 
-	<div  id="bingo-panel"><!--class="container-fluid justify-content-center"-->
-	</div>
-	<!--<div class="d-flex justify-content-center" style="height: 100vh;">
-		<div class="align-self-center" id="bingo-panel" >
-		</div>
-	</div>-->
+<div class="host-page">
+	<p class="mdc-typography--headline5">Host id:<span></span></p>
 	<br>
-	<h1 class="mdc-typography--headline3">project expected to complete in 2 months(peer to peer game using webRTC)<p class="mdc-typography--subtitle2">developing by Advaith s and tom babu <a href="https://github.com/cap-code/Bingo">for contributions on github </a></p></h1>
+	<button class="mdc-button mdc-button--raised" onClick="playArea()">
+		<div class="mdc-button__ripple"></div>
+		<span class="mdc-button__label">start</span>
+	  </button>
+</div>
+
+
+	<div  id="bingo-panel"><!--class="container-fluid justify-content-center"-->
+	   <p class="mdc-typography--headline5">Name:<span id = "globalName"></span></p>
+	   <p class="mdc-typography--headline5"><span id="bingo-tracking"></span></p>
+	</div>
+
+
+	<p class="shuffle">
+		<button class="mdc-button mdc-button--raised" id="shuffleButton">
+			<div class="mdc-button__ripple"></div>
+			<span class="mdc-button__label">shuffle</span>
+		  </button></p>
+	<p></p><p></p>
+	
+  
+
+   <br><br><br>
+   <br><br><br>
+   <div class ="donate">
+	<button class="mdc-button mdc-button--raised" >
+		<div class="mdc-button__ripple"></div>
+		<span class="mdc-button__label">Help us sustain!!</span>
+	  </button>
+   </div>
+
+	<br>
+	<h1 class="mdc-typography--headline5">project expected to complete in 2 months(peer to peer game using webRTC)<p class="mdc-typography--subtitle2">developing by Advaith s and tom babu <a href="https://github.com/cap-code/Bingo">for contributions on github </a></p></h1>
+	<script src="sketch.js"></script>    
+	<script src="main.js"></script>
 </body>
 </html>
