@@ -41,26 +41,39 @@ background(255);
 totalValue=0;
 let d=0;
 for(let i=0;i<rows;i++){
+	for(let j=0;j<cols;j++){
+		if(i==j){
+			if(p[i][j].ticked==true){
+				d++;
+				
+				//console.log(d);
+			}
+	    }
+  
+	}
+	if(d==5){
+		totalValue++;
+		d=0;
+	}
+}
+for(let i=0;i<rows;i++){
 	let c=0;
 	for(let j=0;j<cols;j++){
 		p[i][j].show();
 		p[i][j].cellHover();
 		if(p[i][j].ticked==true){
 			c++;
+			//console.log("c register");
 		}
-		if(i==j){
-		if(p[i][j].ticked==true){
-			d++;
-			//console.log(d);
-		}
+		
 	}
 	   
-        if(c==5||d==5){
+        if(c==5){
 			totalValue++;
+			c=0;
 			//console.log("cols and dia");
 		}
 	}	
-}
 
 for(let i=0;i<rows;i++){
 	let r=0;
@@ -69,9 +82,11 @@ for(let i=0;i<rows;i++){
 		p[j][i].cellHover();
 		if(p[j][i].ticked==true){
 			r++;
+			//console.log("r registered");
 		}
         if(r==5){
 			totalValue++;
+			r=0;
 			//console.log("row");
 		}
 	}	
